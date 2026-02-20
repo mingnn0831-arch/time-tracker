@@ -22,7 +22,38 @@
     <div id="col-1" class="column"></div>
     <div id="col-2" class="column"></div>
   </div>
-  <input type="color" id="hour-color-picker" style="display: none;">
+  <div class="progress-section">
+    <div class="progress-container">
+      <div id="progress-info" class="progress-info"></div>
+      <div class="progress-bar-bg">
+        <div id="daily-progress" class="progress-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button id="reset-colors-btn" class="reset-btn">시간 색상 초기화</button>
+  </div>
+
+  <div id="palette-overlay" class="palette-overlay">
+    <div id="color-palette" class="color-palette">
+      <div class="palette-header">
+        <span id="palette-title">시간 선택</span>
+        <button id="palette-close">&times;</button>
+      </div>
+      <div id="color-grid" class="color-grid"></div>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="confirm-modal-overlay">
+    <div class="confirm-modal">
+      <p>전체 시간이 기본 컬러로 초기화됩니다.</p>
+      <div class="confirm-modal-actions">
+        <button id="confirm-cancel" class="modal-btn cancel">취소</button>
+        <button id="confirm-reset" class="modal-btn reset">초기화</button>
+      </div>
+    </div>
+  </div>
+
   <script src="renderer.js"></script>
 </body>
 
