@@ -1,0 +1,156 @@
+:root {
+  --system-bg: #f2f2f7;
+  --secondary-bg: #ffffff;
+  --label-color: #8e8e93;
+  --text-color: #1c1c1e;
+  --accent-color: #007aff;
+  --dot-inactive: #d1d1d6;
+  --dot-size: 10px;
+  --radius: 3px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--system-bg);
+  color: var(--text-color);
+  height: 100vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Frameless Window Drag */
+.drag-region {
+  height: 32px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-app-region: drag;
+  z-index: 1000;
+}
+
+/* Header Section */
+.header {
+  padding: 52px 20px 12px 20px;
+  text-align: center;
+}
+
+.date-display {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--label-color);
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+}
+
+/* Layout Grid */
+.main-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 32px;
+  padding: 12px 24px 32px 24px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Hour Rows */
+.hour-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hour-label {
+  font-size: 11px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--label-color);
+  width: 20px;
+  text-align: right;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hour-label.current-hour {
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.hour-label:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Blocks (Dots) */
+.dots-container {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: var(--radius);
+  background-color: var(--dot-inactive);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Current Time Blink */
+.dot.current {
+  animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Interactions */
+.dot:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+/* Scrollbar refinement */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
