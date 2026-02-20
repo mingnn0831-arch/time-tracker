@@ -15,21 +15,32 @@
 
 <body>
   <div class="drag-region"></div>
-  <div class="header">
+  <header class="header">
     <div id="date-display" class="date-display"></div>
-  </div>
-  <div id="main-grid" class="main-grid">
-    <div id="col-1" class="column"></div>
-    <div id="col-2" class="column"></div>
-  </div>
-  <div class="progress-section">
-    <div class="progress-container">
-      <div id="progress-info" class="progress-info"></div>
-      <div class="progress-bar-bg">
-        <div id="daily-progress" class="progress-bar-fill"></div>
+    <button id="theme-toggle" class="theme-toggle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </header>
+  <main class="main-content">
+    <div id="main-grid" class="main-grid">
+      <div id="col-1" class="column"></div>
+      <div id="col-2" class="column"></div>
+      <div id="col-3" class="column"></div>
+      <div id="col-4" class="column"></div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-container">
+        <div id="progress-info" class="progress-info"></div>
+        <div class="progress-bar-bg">
+          <div id="daily-progress" class="progress-bar-fill"></div>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
   <div class="footer">
     <button id="reset-colors-btn" class="reset-btn">시간 색상 초기화</button>
   </div>
@@ -38,7 +49,13 @@
     <div id="color-palette" class="color-palette">
       <div class="palette-header">
         <span id="palette-title">시간 선택</span>
-        <button id="palette-close">&times;</button>
+        <button id="palette-close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
       <div id="color-grid" class="color-grid"></div>
     </div>
