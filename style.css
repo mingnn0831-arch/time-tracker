@@ -43,7 +43,7 @@ body {
 
 /* Header Section */
 .header {
-  padding: 2.5svh 20px 1.5svh 20px;
+  padding: calc(1.5svh + env(safe-area-inset-top)) 20px 1.5svh 20px;
   /* Reduced vertical padding */
   position: relative;
   text-align: center;
@@ -59,7 +59,7 @@ body {
 .theme-toggle {
   position: absolute;
   right: 16px;
-  top: 2svh;
+  top: calc(1svh + env(safe-area-inset-top));
   width: 40px;
   height: 40px;
   background: var(--secondary-bg);
@@ -245,7 +245,7 @@ body.dark-mode .hour-label {
 
 /* Footer & Reset Button */
 .footer {
-  padding-bottom: 2.5svh;
+  padding-bottom: calc(1.5svh + env(safe-area-inset-bottom));
   display: flex;
   justify-content: center;
   flex-shrink: 0;
